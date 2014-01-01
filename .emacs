@@ -38,6 +38,7 @@
 
 ;;; Code:
 
+(require 'ob-tangle)
 (require 'cl)
 (package-initialize)
 
