@@ -136,7 +136,7 @@ Dimitri (on the image above, [[fig:dimitri]]) is the clever guy that brougth us 
 
 #+BEGIN_SRC emacs-lisp -n -r
   (add-to-list 'load-path "~/.emacs.d/el-get/el-get")
-  (setq el-get-install-skip-emacswiki-recipes t) (ref:wiki)
+  (setq el-get-install-skip-emacswiki-recipes t) ; (ref:wiki)
   (unless (require 'el-get nil 'noerror)
     (if stk/onlinep
       (with-current-buffer
@@ -151,6 +151,8 @@ Dimitri (on the image above, [[fig:dimitri]]) is the clever guy that brougth us 
 This sets up the load path and fetches and evaluates the stable El-Get branch if not already loaded (as described [[https://github.com/dimitri/el-get#basic-setup][on Github]]). In line [[(wiki)]] we make sure El-Get doesn't load all the Wiki recipes as we don't use them.
 
 #+BEGIN_SRC emacs-lisp :results silent
+  (require 'ob)
+
   (setq el-get-sources
         '(
           (:name ac-php-doc
